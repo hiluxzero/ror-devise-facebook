@@ -1,9 +1,11 @@
 # ror-devise-facebook
-ROR with devise and facebook login
 
-# < First App with ROR >
+# Example Ruby on Rails with devise and Facebook Login
 
 First app with ruby on rails , add examples basic and authenticate user.
+
++ Add Relations Examples: has_many, belongs_to , has_and_belongs_to_many
++ Upload File and Delete File when delete recording ! 
 
 ## Firsts Steps?
 

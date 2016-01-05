@@ -1,0 +1,22 @@
+<h1>Tags#index</h1>
+<%= link_to 'Agregar Tag', new_tag_path() %>
+<table>
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Opciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @tags.each do |tag| %>
+		<tr>
+			<td><%= tag.name %></td>
+			<td>
+				<%= link_to 'Edit' , edit_tag_path(tag.id) %> | 
+				<%= link_to 'Show' , tag_path(tag.id) %> | 
+				<%= link_to 'Delete' ,  tag_path(tag.id), method: "DELETE" %>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

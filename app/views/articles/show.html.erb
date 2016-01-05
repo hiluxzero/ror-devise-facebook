@@ -1,0 +1,36 @@
+<h1>
+	Article#Show
+</h1>
+
+<% @article.tags.each do |tag| %>
+	<%= tag.name %>
+<% end %>
+<%= @article.name %>
+<%= @article.description %>
+<%= @article.photo %>
+<%= @article.urlsource %>
+
+<% if @article.approved == 1 %>
+	Aprobado
+<% else %>
+	Revisión
+<% end %>
+
+<div>
+	<% unless @article.photo.nil? %>
+		<% if File.exist?(Rails.root + 'public/uploads/' + @article.photo) %>
+			<%= image_tag('/uploads/' + @article.photo, size: "600") %>
+		<% else %>
+			-
+		<% end %>
+	<% else %>
+		-
+	<% end %>
+</div>
+
+
+<%= @article.user.name %>
+
+
+<hr>
+<%= link_to "Back" , articles_path() %>

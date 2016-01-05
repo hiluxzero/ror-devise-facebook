@@ -1,0 +1,27 @@
+<%= form_for(@article) do |f| %>
+	<p>
+		<%= f.label :nombre %><br>
+		<%= f.text_area :name, placeholder: 'Nombre' %>
+	</p>
+	<p>
+		<%= f.label :description %><br>
+		<%= f.text_area :description, placeholder: 'Descripción' %>
+	</p>
+	<p>
+		<%= f.label :photo %><br>
+		<%= f.file_field  :photo, placeholder: 'Imagén Artículo' %>
+	</p>
+	<p>
+		<%= f.label :urlsource %><br>
+		<%= f.text_area :urlsource, placeholder: 'Link' %>
+	</p>
+	<% for tag in Tag.all %>
+		<tr>
+		<td><%= check_box_tag "article[tag_ids][]", tag.id, @article.tags.include?(tag) %></td>
+		<td><%= tag.name %></td>
+		</tr>
+	<% end %>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
